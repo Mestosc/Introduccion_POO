@@ -19,5 +19,6 @@ public class Main {
         System.out.println(circulo.calcularDiametro());
         System.out.println(circulo);
         Circulo circulo1 = new Circulo(punto1,23.23);
+        System.out.println(circulo1);
     }
 }
