@@ -8,7 +8,7 @@ public class Main {
         fecha.incrementarMes();
         fecha.incrementarAno();
         System.out.println(fecha);
-        Punto punto1 = new Punto(8,5);
+        Punto punto1 = new Punto(23,12);
         Punto punto2 = new Punto(23,10);
         Punto punto3 = new Punto(32,10);
         if (punto1.equals(punto3)) {
@@ -20,5 +20,8 @@ public class Main {
         System.out.println(circulo);
         Circulo circulo1 = new Circulo(punto1,23.23);
         System.out.println(circulo1);
+        if (circulo.equals(circulo1)) {
+            System.out.println("Estan en la misma posicion");
+        }
     }
 }
