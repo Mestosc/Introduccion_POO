@@ -8,7 +8,7 @@ public class Main {
         fecha.incrementarMes();
         fecha.incrementarAno();
         System.out.println(fecha);
-        Punto punto1 = new Punto(23,10);
+        Punto punto1 = new Punto(8,5);
         Punto punto2 = new Punto(23,10);
         Punto punto3 = new Punto(32,10);
         if (punto1.equals(punto3)) {
@@ -18,5 +18,6 @@ public class Main {
         Circulo circulo = new Circulo(23,12,34);
         System.out.println(circulo.calcularDiametro());
         System.out.println(circulo);
+        Circulo circulo1 = new Circulo(punto1,23.23);
     }
 }
