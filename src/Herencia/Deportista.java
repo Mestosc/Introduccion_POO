@@ -1,8 +1,8 @@
 package Herencia;
 
 public class Deportista extends Persoa {
-    String deporte;
-    String club;
-    int licencia;
+    private String deporte;
+    private String club;
+    private int licencia;
 
 }

@@ -1,7 +1,7 @@
 package Herencia;
 
 public class Persoa {
-    String nome;
-    String dni;
+    private String nome;
+    private String dni;
 
 }
