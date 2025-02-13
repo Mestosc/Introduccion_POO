@@ -1,7 +1,11 @@
 package Herencia;
 
 public class Persoa {
-    private String nome;
-    private String dni;
+    protected String nome;
+    protected String dni;
 
+    public Persoa(String nome, String dni) {
+        this.nome = nome;
+        this.dni = dni;
+    }
 }
