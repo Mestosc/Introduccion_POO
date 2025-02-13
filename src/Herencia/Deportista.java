@@ -1,4 +1,8 @@
 package Herencia;
 
-public class Deportista {
+public class Deportista extends Persoa {
+    String deporte;
+    String club;
+    int licencia;
+
 }
