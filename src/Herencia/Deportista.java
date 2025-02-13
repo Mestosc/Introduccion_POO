@@ -4,6 +4,13 @@ public class Deportista extends Persoa {
     private String deporte;
     private String club;
     private int licencia;
+
+    /**
+     * Creacion de un objeto deportista
+     * @param persoa la persona a la que queremos definir como deportista
+     * @param club el club al que pertenece ese deportista
+     * @param licencia la licencia de ese deportista
+     */
     public Deportista(Persoa persoa,String club, int licencia) {
         super(persoa.nome,persoa.dni);
         this.club = club;
