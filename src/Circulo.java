@@ -20,6 +20,6 @@ public class Circulo extends Punto {
         return Math.pow(radio,2)*Math.PI;
     }
     public double calcularPerimetro() {
-        return radio*calcularDiametro();
+        return Math.PI*calcularDiametro();
     }
 }
