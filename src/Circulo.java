@@ -11,4 +11,7 @@ public class Circulo extends Punto {
     public double calcularArea() {
         return (radio*radio)*PI;
     }
+    public double calcularPerimetro() {
+        return PI*calcularDiametro();
+    }
 }
