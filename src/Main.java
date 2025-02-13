@@ -15,5 +15,7 @@ public class Main {
             System.out.println("Son iguales");
         }
         System.out.println(punto2);
+        Circulo circulo = new Circulo(23,12,34);
+        System.out.println(circulo.calcularDiametro());
     }
 }
