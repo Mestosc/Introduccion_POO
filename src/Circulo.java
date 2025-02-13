@@ -4,6 +4,15 @@ public class Circulo extends Punto {
         super(x,y);
         this.radio = radio;
     }
+
+    public double getRadio() {
+        return radio;
+    }
+
+    public void setRadio(double radio) {
+        this.radio = radio;
+    }
+
     public double calcularDiametro() {
         return radio*2;
     }
