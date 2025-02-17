@@ -10,7 +10,7 @@ public class Centro {
     private double y;
 
     /**
-     * Definicion del punto
+     * Definicion del punto central de una figura geometrica
      * @param x coordenada X
      * @param y coordenada Y
      */
