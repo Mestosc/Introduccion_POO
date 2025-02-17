@@ -49,6 +49,10 @@ public class Cilindro extends Circulo {
         setAltura(0);
     }
 
+    /**
+     * El area del cilindro es la superficie
+     * @return el calculo de la superficie (area) del cilindro
+     */
     @Override
     public double calcularArea() {
         return super.calcularArea()*2 + 2 * Math.PI * altura;
