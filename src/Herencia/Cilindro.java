@@ -43,6 +43,8 @@ public class Cilindro extends Circulo {
     public Cilindro(int x, int y, int radio) {
         super(x, y, radio);
     }
+
+    @Override
     public double calcularArea() {
         return super.calcularArea()*2 + 2 * Math.PI * altura;
     }
