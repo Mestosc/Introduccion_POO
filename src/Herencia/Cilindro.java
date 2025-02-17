@@ -1,5 +1,7 @@
 package Herencia;
 
+import java.util.Objects;
+
 public class Cilindro extends Circulo {
     private double altura;
     public Cilindro(Centro centro, double radio, double altura) {
@@ -10,6 +12,19 @@ public class Cilindro extends Circulo {
     public Cilindro(double x, double y, double radio, double altura) {
         super(x, y, radio);
         this.altura = altura;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Cilindro cilindro = (Cilindro) o;
+        return Double.compare(altura, cilindro.altura) == 0 && Double.compare(getRadio(), cilindro.getRadio()) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(altura);
     }
 
     public Cilindro(int x, int y, int radio) {
