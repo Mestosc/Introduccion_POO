@@ -102,16 +102,16 @@ public class Fecha {
 
     public void setDia(int dia) {
         int diasPorMes = obtenerDiasMes();
-        if (dia<=diasPorMes && dia>=1) {
-            this.dia = dia;
+        if (dia<=diasPorMes && dia>=1) { // Si es menor al limite superior del mes y mayor que uno
+            this.dia = dia; //  El dia de la fecha es igual al que pasamos por parametro
         }
-        else if (dia>diasPorMes) {
-            this.dia = 1;
-            incrementarMes();
+        else if (dia>diasPorMes) { // Si el dia es mayor al limite superior del mes
+            this.dia = 1; // Reseteamos el dia a 1
+            incrementarMes(); // Incrementamos el mes
         }
-        else {
-            this.dia = 1;
-            this.mes = 1;
+        else { // En caso contrario
+            this.dia = 1; // Reseteamos dia a 1
+            this.mes = 1; // Reseteamos mes a 1
         }
     }
 
