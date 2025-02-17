@@ -82,7 +82,7 @@ public class Fecha {
         return this.dia == fecha.dia && this.mes == fecha.mes && this.ano == fecha.ano;
     }
     public boolean equals(Object ob) {
-        if (ob.getClass().equals(this.getClass())) {
+        if (ob.getClass().getName().equals(this.getClass().getName())) {
             Fecha ob1 = (Fecha) ob;
             return this.getDia() == ob1.getDia() &&  this.getMes() == ob1.getMes() && this.getAno() == ob1.getAno();
         }
