@@ -1,3 +1,5 @@
+package Herencia;
+
 public class Circulo extends Punto {
     private double radio;
     public Circulo(Punto punto, double radio) {
