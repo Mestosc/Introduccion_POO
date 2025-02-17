@@ -5,7 +5,7 @@ public class Cilindro extends Circulo {
     private double altura;
     public Cilindro(Centro centro, double radio, double altura) {
         super(centro, radio);
-        this.altura = altura;
+        setAltura(altura);
     }
     public Cilindro(Circulo circulo, double altura) {
         super(circulo.getX(),circulo.getY(),circulo.getRadio());
@@ -13,7 +13,7 @@ public class Cilindro extends Circulo {
     }
     public Cilindro(double x, double y, double radio, double altura) {
         super(x, y, radio);
-        this.altura = altura;
+        setAltura(altura);
     }
 
     public double getAltura() {
@@ -21,7 +21,12 @@ public class Cilindro extends Circulo {
     }
 
     public void setAltura(double altura) {
-        this.altura = altura;
+        if (altura>0) {
+            this.altura = altura
+        }
+        else {
+            this.altura = 1;
+        }
     }
 
     @Override
