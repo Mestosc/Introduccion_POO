@@ -16,10 +16,13 @@ public class Cilindro extends Circulo {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        Cilindro cilindro = (Cilindro) o;
-        return Double.compare(altura, cilindro.altura) == 0 && Double.compare(getRadio(), cilindro.getRadio()) == 0;
+        if (o.getClass() == getClass()) {
+            Cilindro cilindro = (Cilindro) o;
+            return getRadio() == cilindro.getRadio() && altura == cilindro.altura;
+        }
+        else {
+            return false;
+        }
     }
 
     @Override
