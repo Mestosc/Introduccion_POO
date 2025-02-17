@@ -1,7 +1,7 @@
 package Herencia;
 
 /**
- * Definicion de un punto en el espacio
+ * Definicion de el centro de una figura en el espacio
  * @author Oscar Rodriguez
  * @version 1.0
  */
