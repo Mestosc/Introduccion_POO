@@ -1,9 +1,19 @@
 package Herencia;
 
+/**
+ * Definicion de un punto en el espacio
+ * @author Oscar Rodriguez
+ * @version 1.0
+ */
 public class Punto {
     private double x;
     private double y;
 
+    /**
+     * Definicion del punto
+     * @param x coordenada X
+     * @param y coordenada Y
+     */
     public Punto(double x, double y) {
         setX(x);
         setY(y);
