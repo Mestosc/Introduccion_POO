@@ -42,6 +42,7 @@ public class Cilindro extends Circulo {
 
     public Cilindro(int x, int y, int radio) {
         super(x, y, radio);
+        setAltura(0);
     }
 
     @Override
