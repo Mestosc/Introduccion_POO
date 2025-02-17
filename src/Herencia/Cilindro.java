@@ -1,15 +1,15 @@
 package Herencia;
 
 public class Cilindro extends Circulo {
-    private double altura;
-    public Cilindro(Centro centro, double radio, double altura) {
+    private double profundidad;
+    public Cilindro(Centro centro, double radio, double profundidad) {
         super(centro, radio);
-        this.altura = altura;
+        this.profundidad = profundidad;
     }
 
-    public Cilindro(double x, double y, double radio) {
+    public Cilindro(double x, double y, double radio, double profundidad) {
         super(x, y, radio);
-        this.altura = radio;
+        this.profundidad = profundidad;
     }
 
     public Cilindro(int x, int y, int radio) {
@@ -17,15 +17,15 @@ public class Cilindro extends Circulo {
     }
     public double calcularArea() {
         double areaBases = super.calcularArea()*2;
-        double areaLateral = 2 * Math.PI * altura;
+        double areaLateral = 2 * Math.PI * profundidad;
         return areaBases + areaLateral;
     }
     public double calcularVolumen() {
-        return Math.PI * Math.pow(getRadio(),2) * altura;
+        return Math.PI * Math.pow(getRadio(),2) * profundidad;
     }
 
     @Override
     public String toString() {
-        return super.toString() + " Altura: " + altura;
+        return super.toString() + " Altura: " + profundidad;
     }
 }
