@@ -16,9 +16,7 @@ public class Cilindro extends Circulo {
         super(x, y, radio);
     }
     public double calcularArea() {
-        double areaBases = super.calcularArea()*2;
-        double areaLateral = 2 * Math.PI * altura;
-        return areaBases + areaLateral;
+        return super.calcularArea()*2 + 2 * Math.PI * altura;
     }
     public double calcularVolumen() {
         return Math.PI * Math.pow(getRadio(),2) * altura;
