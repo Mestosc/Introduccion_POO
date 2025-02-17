@@ -1,9 +1,9 @@
 package Herencia;
 
-public class Circulo extends Punto {
+public class Circulo extends Centro {
     private double radio;
-    public Circulo(Punto punto, double radio) {
-        super(punto.getX(),punto.getY());
+    public Circulo(Centro centro, double radio) {
+        super(centro.getX(), centro.getY());
         this.radio = radio;
     }
     public Circulo(double x, double y, double radio) {

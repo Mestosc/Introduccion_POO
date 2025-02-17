@@ -5,7 +5,7 @@ package Herencia;
  * @author Oscar Rodriguez
  * @version 1.0
  */
-public class Punto {
+public class Centro {
     private double x;
     private double y;
 
@@ -14,7 +14,7 @@ public class Punto {
      * @param x coordenada X
      * @param y coordenada Y
      */
-    public Punto(double x, double y) {
+    public Centro(double x, double y) {
         setX(x);
         setY(y);
     }
@@ -26,7 +26,7 @@ public class Punto {
 
     public boolean equals(Object o) {
         if (o.getClass().equals(this.getClass())) {
-            Punto o1 = (Punto) o;
+            Centro o1 = (Centro) o;
             return o1.x == this.x && o1.y == this.y;
         }
         else {
