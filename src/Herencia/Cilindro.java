@@ -9,7 +9,7 @@ public class Cilindro extends Circulo {
     }
     public Cilindro(Circulo circulo, double altura) {
         super(circulo.getX(),circulo.getY(),circulo.getRadio());
-        this.altura = altura;
+        setAltura(altura);
     }
     public Cilindro(double x, double y, double radio, double altura) {
         super(x, y, radio);
@@ -22,7 +22,7 @@ public class Cilindro extends Circulo {
 
     public void setAltura(double altura) {
         if (altura>0) {
-            this.altura = altura
+            this.altura = altura;
         }
         else {
             this.altura = 1;
