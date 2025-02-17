@@ -13,6 +13,14 @@ public class Cilindro extends Circulo {
         this.altura = altura;
     }
 
+    public double getAltura() {
+        return altura;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o.getClass() == getClass()) {
