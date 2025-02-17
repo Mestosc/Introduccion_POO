@@ -10,6 +10,10 @@ public class Circulo extends Centro {
         super(x,y);
         this.radio = radio;
     }
+    public Circulo(int x, int y, int radio) {
+        super(x,y);
+        this.radio = radio;
+    }
 
     public double getRadio() {
         return radio;
