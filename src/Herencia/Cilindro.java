@@ -11,6 +11,10 @@ public class Cilindro extends Circulo {
         super(circulo.getX(),circulo.getY(),circulo.getRadio());
         setAltura(altura);
     }
+    public Cilindro(Circulo circulo) {
+        super(circulo.getX(),circulo.getY(),circulo.getRadio());
+        setAltura(0);
+    }
     public Cilindro(double x, double y, double radio, double altura) {
         super(x, y, radio);
         setAltura(altura);
