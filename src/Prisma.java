@@ -11,4 +11,7 @@ public class Prisma extends Cuadrado {
         double areaLateral = 4 * lado * altura;
         return areaBase + areaLateral;
     }
+    public double calcularVolumen() {
+        return Math.pow(lado,2) * altura;
+    }
 }
