@@ -70,12 +70,12 @@ public class Fecha {
     }
     public void incrementarDia() {
         int diasPorMes = obtenerDiasMes();
-        if (dia<diasPorMes) {
-            this.dia += 1;
+        if (dia<diasPorMes) { // Si el dia es inferior al limite superior del mes
+            this.dia += 1; // Incrementamos 1
         }
-        else {
-            this.dia = 1;
-            incrementarMes();
+        else { // En caso contrario
+            this.dia = 1; // Dia se resetea a 1
+            incrementarMes(); // Se incrementa el mes
         }
     }
     public boolean equals(Fecha fecha) {
