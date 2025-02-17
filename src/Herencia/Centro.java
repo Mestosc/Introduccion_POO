@@ -25,7 +25,7 @@ public class Centro {
     }
 
     public boolean equals(Object o) {
-        if (o.getClass().equals(this.getClass())) {
+        if (o.getClass()==this.getClass()) {
             Centro o1 = (Centro) o;
             return o1.x == this.x && o1.y == this.y;
         }
