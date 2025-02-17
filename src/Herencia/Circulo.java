@@ -17,7 +17,8 @@ public class Circulo extends Punto {
 
     @Override
     public String toString() {
-        return "Centro: " + getX() + "," + getY() + "\nEl radio es: " + radio;
+        return super.toString() + " " +
+                "Centro:" + radio;
     }
 
     public void setRadio(double radio) {
