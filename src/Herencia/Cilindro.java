@@ -25,11 +25,6 @@ public class Cilindro extends Circulo {
         }
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(altura);
-    }
-
     public Cilindro(int x, int y, int radio) {
         super(x, y, radio);
     }
