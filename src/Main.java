@@ -14,6 +14,7 @@ public class Main {
         Centro centro1 = new Centro(23,12);
         Centro centro2 = new Centro(23,10);
         Centro punto3 = new Centro(32,10);
+        Circulo circulo2 = new Circulo(21,10,21);
         if (centro1.equals(punto3)) {
             System.out.println("Son iguales");
         }

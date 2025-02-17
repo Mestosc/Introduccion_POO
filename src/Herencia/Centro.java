@@ -21,7 +21,7 @@ public class Centro {
 
     @Override
     public String toString() {
-        return "X:" + x + " " + "Y:" + y;
+        return x + "," + y;
     }
 
     public boolean equals(Object o) {
