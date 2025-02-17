@@ -23,4 +23,9 @@ public class Cilindro extends Circulo {
     public double calcularVolumen() {
         return Math.PI * Math.pow(getRadio(),2) * altura;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " Altura: " + altura;
+    }
 }
