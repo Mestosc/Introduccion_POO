@@ -9,7 +9,7 @@ public class CuentaCorriente {
 
     public CuentaCorriente(double saldo, String nif, String numeroCuenta, String titular) {
         this.saldo = saldo;
-        this.nif = nif;
+        setNif(nif);
         this.numeroCuenta = numeroCuenta;
         this.titular = titular;
         contadorContas++;
@@ -30,9 +30,14 @@ public class CuentaCorriente {
     public String getNif() {
         return nif;
     }
-
+    private char obtenerLetra(String dni) {
+        char[] letras = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
+        return letras[Integer.parseInt(dni) % 23];
+    }
     public void setNif(String nif) {
-        this.nif = nif;
+        if (nif.length()==9 && nif.charAt(nif.length()-1) == obtenerLetra(nif)) {
+            this.nif = nif;
+        }
     }
 
     public String getNumeroCuenta() {
