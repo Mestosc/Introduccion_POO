@@ -5,6 +5,7 @@ public class CuentaCorriente {
     private String titular;
     private String numeroCuenta;
     private String nif;
+    private static int contadorContas;
 
     public CuentaCorriente(double saldo, String nif, String numeroCuota, String titular) {
         this.saldo = saldo;
