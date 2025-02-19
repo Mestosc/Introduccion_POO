@@ -51,6 +51,11 @@ public class CuentaCorriente {
         this.titular = titular;
     }
 
+    /**
+     * Metodo para sacar dinero
+     * @param dineroSacar la cantidad de dinero a sacar
+     * @return el dinero que queda
+     */
     public double sacarDinero(double dineroSacar) {
         saldo -= dineroSacar;
         return saldo;
