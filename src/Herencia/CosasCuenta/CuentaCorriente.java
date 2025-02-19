@@ -30,13 +30,16 @@ public class CuentaCorriente {
     public String getNif() {
         return nif;
     }
-    private char obtenerLetra(String dni) {
+    private static char obtenerLetra(String dni) {
+        int num = Integer.parseInt(dni);
         char[] letras = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
-        return letras[Integer.parseInt(dni) % 23];
+        return letras[num % 23];
     }
     public void setNif(String nif) {
-        if (nif.length()==9 && nif.charAt(nif.length()-1) == obtenerLetra(nif)) {
-            this.nif = nif;
+        nif = nif.trim();
+        if (nif.length()==9) {
+            if (nif.charAt(nif.length()-1) == obtenerLetra(nif.substring(0,nif.length()-1))) this.nif = nif;
+            else this.nif = "0".repeat(8) + "A";
         }
     }
 
