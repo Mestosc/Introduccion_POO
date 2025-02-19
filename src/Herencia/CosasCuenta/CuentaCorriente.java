@@ -7,12 +7,16 @@ public class CuentaCorriente {
     private String nif;
     private static int contadorContas;
 
-    public CuentaCorriente(double saldo, String nif, String numeroCuota, String titular) {
+    public CuentaCorriente(double saldo, String nif, String numeroCuenta, String titular) {
         this.saldo = saldo;
         this.nif = nif;
-        this.numeroCuenta = numeroCuota;
+        this.numeroCuenta = numeroCuenta;
         this.titular = titular;
         contadorContas++;
+    }
+
+    public static int getContadorContas() {
+        return contadorContas;
     }
 
     public double getSaldo() {
