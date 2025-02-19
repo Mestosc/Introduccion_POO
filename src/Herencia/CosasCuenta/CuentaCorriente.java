@@ -12,6 +12,7 @@ public class CuentaCorriente {
         this.nif = nif;
         this.numeroCuenta = numeroCuota;
         this.titular = titular;
+        contadorContas++;
     }
 
     public double getSaldo() {
