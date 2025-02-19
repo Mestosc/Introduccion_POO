@@ -3,13 +3,13 @@ package Herencia.CosasCuenta;
 public class CuentaCorriente {
     private double saldo;
     private String titular;
-    private double numeroCuota;
+    private String numeroCuenta;
     private String nif;
 
-    public CuentaCorriente(double saldo, String nif, double numeroCuota, String titular) {
+    public CuentaCorriente(double saldo, String nif, String numeroCuota, String titular) {
         this.saldo = saldo;
         this.nif = nif;
-        this.numeroCuota = numeroCuota;
+        this.numeroCuenta = numeroCuota;
         this.titular = titular;
     }
 
@@ -29,12 +29,12 @@ public class CuentaCorriente {
         this.nif = nif;
     }
 
-    public double getNumeroCuota() {
-        return numeroCuota;
+    public String getNumeroCuenta() {
+        return numeroCuenta;
     }
 
-    public void setNumeroCuota(double numeroCuota) {
-        this.numeroCuota = numeroCuota;
+    public void setNumeroCuenta(String numeroCuenta) {
+        this.numeroCuenta = numeroCuenta;
     }
 
     public String getTitular() {
@@ -49,4 +49,5 @@ public class CuentaCorriente {
         saldo -= dineroSacar;
         return saldo;
     }
+
 }

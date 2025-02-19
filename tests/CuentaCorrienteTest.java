@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CuentaCorrienteTest {
-    CuentaCorriente prueba = new CuentaCorriente(140.10,"102134234A",12,"LKEL");
+    CuentaCorriente prueba = new CuentaCorriente(140.10,"102134234A","2141341FA","LKEL");
     @BeforeEach
     void setPrueba() {
         prueba.setSaldo(140.10);
