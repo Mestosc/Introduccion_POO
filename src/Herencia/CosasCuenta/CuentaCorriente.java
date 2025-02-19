@@ -54,11 +54,9 @@ public class CuentaCorriente {
     /**
      * Metodo para sacar dinero
      * @param dineroSacar la cantidad de dinero a sacar
-     * @return el dinero que queda
      */
-    public double sacarDinero(double dineroSacar) {
+    public void sacarDinero(double dineroSacar) {
         saldo -= dineroSacar;
-        return saldo;
     }
 
 }
