@@ -37,10 +37,8 @@ public class CuentaCorriente {
     }
     public void setNif(String nif) {
         nif = nif.trim();
-        if (nif.length()==9) {
-            if (nif.charAt(nif.length()-1) == obtenerLetra(nif.substring(0,nif.length()-1))) this.nif = nif;
-            else this.nif = "0".repeat(8) + "A";
-        }
+        if (nif.length()==9 && nif.charAt(nif.length()-1) == obtenerLetra(nif.substring(0,nif.length()-1))) this.nif = nif;
+        else this.nif = "0".repeat(8) + "A";
     }
 
     public String getNumeroCuenta() {
