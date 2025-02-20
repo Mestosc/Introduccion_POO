@@ -5,9 +5,6 @@
 
 public class Main {
     public static void main(String[] args) {
-        Fecha fecha = new Fecha(30,3,2010);
-        //calendario2.incrementarDia();
-        fecha.incrementarMes();
-        fecha.incrementarAno();
-        System.out.println(fecha);
+        Horas horas1 = new Horas(14,20,30,"f12");
+        System.out.println(horas1);
 }}

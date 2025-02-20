@@ -6,17 +6,20 @@ public class Horas {
     formato formatoTiempo;
     private String mananaTarde;
 
-    public Horas(int horas, int minutos, int segundos, formato formatoTiempo) {
+    public Horas(int horas, int minutos, int segundos, String formatoTiempo) {
         setHoras(horas);
         setMinutos(minutos);
         setSegundos(segundos);
-        this.formatoTiempo = formatoTiempo;
+        this.formatoTiempo = formato.valueOf(formatoTiempo.toUpperCase());
         setMananaTarde();
     }
 
-    public void setMananaTarde() {
+    /**
+     * Seteamos si es A.M. o P.M. dependiendo de como sea la hora almacenada
+     */
+    private void setMananaTarde() {
         if (formatoTiempo.equals(formato.F12)) {
-            if (horas<12) {
+            if (horas<=12) {
                 this.mananaTarde = "A.M.";
             }
             else {
@@ -27,13 +30,17 @@ public class Horas {
 
     @Override
     public String toString() {
-        if (formatoTiempo.equals(formato.F12)) return horas + ":" + minutos + ":" + segundos + " " + mananaTarde;
-        else return horas + ":" + minutos + ":" + segundos + " ";
+        if (formatoTiempo.equals(formato.F12)) return getHoras() + ":" + minutos + ":" + segundos + " " + mananaTarde;
+        else return getHoras() + ":" + minutos + ":" + segundos + " ";
     }
 
     public int getHoras() {
-        if (formatoTiempo.equals(formato.F12)) return horas-12;
-        else return horas;
+        int horasMostrar=horas;
+        if (formatoTiempo.equals(formato.F12)) {
+            if (horas>12) horasMostrar -= 12;
+            if (horas==0) horasMostrar = 12;
+        }
+        return horasMostrar;
     }
 
     public void setHoras(int horas) {
