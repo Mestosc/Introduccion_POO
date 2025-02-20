@@ -23,20 +23,17 @@ public class Horas {
      * Obtenemos A.M o P.M dependiendo de la hora que sea
      */
     private String getMananaTarde() {
-        if (formatoTiempo.equals(formato.F12)) {
-            if (horas<=12) {
-                return "A.M.";
-            }
-            else {
-                return "P.M.";
-            }
+        if (horas<=12) {
+            return "A.M.";
         }
-        return "";
+        else {
+            return "P.M.";
+        }
     }
 
     @Override
     public String toString() {
-        if (formatoTiempo.equals(formato.F24)) return "%d:%d:%d".formatted(getHoras(),minutos,segundos);
+        if (formatoTiempo == formato.F24) return "%d:%d:%d".formatted(getHoras(),minutos,segundos);
         else return "%d:%d:%d %s".formatted(getHoras(),minutos,segundos,getMananaTarde());
     }
 
