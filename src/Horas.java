@@ -1,3 +1,7 @@
+enum formato {
+    AM,
+    PM,
+}
 public class Horas {
     private int horas;
     private int minutos;
