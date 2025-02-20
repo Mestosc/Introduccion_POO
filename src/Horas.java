@@ -1,16 +1,15 @@
-enum formato {
-    AM,
-    PM,
-}
+
 public class Horas {
     private int horas;
     private int minutos;
     private int segundos;
+    formato formatoTiempo;
 
-    public Horas(int horas, int minutos, int segundos) {
+    public Horas(int horas, int minutos, int segundos, formato formatoTiempo) {
         setHoras(horas);
         setMinutos(minutos);
         setSegundos(segundos);
+        this.formatoTiempo = formatoTiempo;
     }
 
     public int getHoras() {
