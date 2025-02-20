@@ -4,16 +4,30 @@ public class Horas {
     private int minutos;
     private int segundos;
     formato formatoTiempo;
+    private String mananaTarde;
 
     public Horas(int horas, int minutos, int segundos, formato formatoTiempo) {
         setHoras(horas);
         setMinutos(minutos);
         setSegundos(segundos);
         this.formatoTiempo = formatoTiempo;
+        setMananaTarde();
+    }
+
+    public void setMananaTarde() {
+        if (formatoTiempo.equals(formato.F12)) {
+            if (horas<12) {
+                this.mananaTarde = "A.M.";
+            }
+            else {
+                this.mananaTarde = "P.M.";
+            }
+        }
     }
 
     public int getHoras() {
-        return horas;
+        if (formatoTiempo.equals(formato.F12)) return horas-12;
+        else return horas;
     }
 
     public void setHoras(int horas) {

@@ -1,4 +1,4 @@
 public enum formato {
-        AM,
-        PM,
+    F12,
+    F24,
 }
