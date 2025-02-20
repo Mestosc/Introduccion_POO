@@ -25,6 +25,12 @@ public class Horas {
         }
     }
 
+    @Override
+    public String toString() {
+        if (formatoTiempo.equals(formato.F12)) return horas + ":" + minutos + ":" + segundos + " " + mananaTarde;
+        else return horas + ":" + minutos + ":" + segundos + " ";
+    }
+
     public int getHoras() {
         if (formatoTiempo.equals(formato.F12)) return horas-12;
         else return horas;
