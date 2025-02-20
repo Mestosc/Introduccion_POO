@@ -36,7 +36,7 @@ public class Horas {
 
     @Override
     public String toString() {
-        if (formatoTiempo.equals(formato.F24)) return getHoras() + ":" + minutos + ":" + segundos;
+        if (formatoTiempo.equals(formato.F24)) return "%d:%d:%d".formatted(getHoras(),minutos,segundos);
         else return "%d:%d:%d %s".formatted(getHoras(),minutos,segundos,getMananaTarde());
     }
 
