@@ -6,14 +6,21 @@ public class Horas {
     formato formatoTiempo;
     private String mananaTarde;
 
-    public Horas(int horas, int minutos, int segundos, String formatoTiempo) {
+    public Horas(int horas, int minutos, int segundos, String formato) {
         setHoras(horas);
         setMinutos(minutos);
         setSegundos(segundos);
-        this.formatoTiempo = formato.valueOf(formatoTiempo.toUpperCase());
+        setFormatoTiempo(formato);
         setMananaTarde();
     }
-
+    public void setFormatoTiempo(String formatoTiempo) {
+        if (formatoTiempo.equals("12") || formatoTiempo.equalsIgnoreCase("f12")) {
+            this.formatoTiempo = formato.F12;
+        }
+        else {
+            this.formatoTiempo = formato.F24;
+        }
+    }
     /**
      * Seteamos si es A.M. o P.M. dependiendo de como sea la hora almacenada
      */
