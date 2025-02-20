@@ -22,7 +22,7 @@ public class Horas {
     }
 
     public void setMinutos(int minutos) {
-        this.minutos = minutos;
+        if (minutos>=0 && minutos < 60) this.minutos = minutos;
     }
 
     public int getSegundos() {
@@ -30,6 +30,6 @@ public class Horas {
     }
 
     public void setSegundos(int segundos) {
-        this.segundos = segundos;
+        if (segundos>=0 && segundos < 60) this.segundos = segundos;
     }
 }
