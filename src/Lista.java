@@ -5,7 +5,15 @@ public class Lista {
     public Lista() {
         numeros = new int[0];
     }
+    public void insert(int index,int value) {
+        int[] newNumbers = Arrays.copyOfRange(numeros,0,index);
+        int[] twoNumbers = Arrays.copyOfRange(numeros,index,numeros.length);
+        numeros = Arrays.copyOf(numeros,numeros.length+1);
+        numeros[index] = value;
+        for (int i = 0; i < index; i++) {
 
+        }
+    }
     public int[] getNumeros() {
         return numeros;
     }

@@ -5,6 +5,7 @@ public class Main {
         lista1.append(20);
         lista1.append(30);
         lista1.firstAppend(100);
+        lista1.firstAppend(200);
         for (int i : lista1.getNumeros()) {
             System.out.println(i);
         }
