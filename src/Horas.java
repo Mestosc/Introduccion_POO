@@ -1,4 +1,8 @@
-
+/**
+ * Definiendo las horas del dia, con la posibilidad de indicar el formato
+ * @author Oscar Rodriguez
+ * @version 1.0
+ */
 public class Horas {
     private int horas;
     private int minutos;
@@ -33,17 +37,12 @@ public class Horas {
 
     @Override
     public String toString() {
-        if (formatoTiempo == formato.F24) return "%d:%d:%d".formatted(getHoras(),minutos,segundos);
-        else return "%d:%d:%d %s".formatted(getHoras(),minutos,segundos,getMananaTarde());
+        if (formatoTiempo == formato.F24) return "%d:%d:%d".formatted(horas,minutos,segundos);
+        else return "%d:%d:%d %s".formatted(horas-12,minutos,segundos,getMananaTarde());
     }
 
     public int getHoras() {
-        int horasMostrar=horas;
-        if (formatoTiempo.equals(formato.F12)) {
-            if (horas>12) horasMostrar -= 12;
-            if (horas==0) horasMostrar = 12;
-        }
-        return horasMostrar;
+        return horas;
     }
 
     public void setHoras(int horas) {
