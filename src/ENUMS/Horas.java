@@ -1,5 +1,7 @@
+package ENUMS;
+
 /**
- * Definiendo las horas del dia, con la posibilidad de indicar el formato
+ * Definiendo las horas del dia, con la posibilidad de indicar el ENUMS.formato
  * @author Oscar Rodriguez
  * @version 1.0
  */
@@ -14,7 +16,7 @@ public class Horas {
      * @param horas la hora del dia
      * @param minutos la cantidad de minutos
      * @param segundos la cantidad de segundos
-     * @param formato el formato si es 12h o 24h
+     * @param formato el ENUMS.formato si es 12h o 24h
      */
     public Horas(int horas, int minutos, int segundos, String formato) {
         setHoras(horas);
