@@ -5,13 +5,23 @@ public class Lista {
     public Lista() {
         numeros = new int[0];
     }
+    public Lista(int...numeros) {
+        this.numeros = numeros;
+    }
     public void insert(int index,int value) {
-        int[] newNumbers = Arrays.copyOfRange(numeros,0,index);
-        int[] twoNumbers = Arrays.copyOfRange(numeros,index,numeros.length);
-        numeros = Arrays.copyOf(numeros,numeros.length+1);
-        numeros[index] = value;
-        for (int i = 0; i < index; i++) {
-
+        if (index==0) firstAppend(value);
+        else if (index==numeros.length-1) append(value);
+        else {
+            int[] newNumbers = Arrays.copyOfRange(numeros, 0, index);
+            int[] twoNumbers = Arrays.copyOfRange(numeros, index, numeros.length);
+            numeros = Arrays.copyOf(numeros, numeros.length + 1);
+            numeros[index] = value;
+            for (int i = 0; i < index; i++) {
+                numeros[i] = newNumbers[i];
+            }
+            for (int i = index+1, j = 0; i < numeros.length; i++,j++) {
+                numeros[i] = twoNumbers[j];
+            }
         }
     }
     public int[] getNumeros() {
