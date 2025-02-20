@@ -1,10 +1,15 @@
 import java.util.Arrays;
 
 public class Lista {
-    int[] numeros;
+    private int[] numeros;
     public Lista() {
         numeros = new int[0];
     }
+
+    public int[] getNumeros() {
+        return numeros;
+    }
+
     public void firstAppend(int numero) {
         numeros = Arrays.copyOf(numeros,numeros.length+1);
         int[] new_numeros = Arrays.copyOfRange(numeros,0, numeros.length-1);
