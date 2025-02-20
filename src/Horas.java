@@ -9,6 +9,13 @@ public class Horas {
     private int segundos;
     formato formatoTiempo;
 
+    /**
+     * Construccion de horas
+     * @param horas la hora del dia
+     * @param minutos la cantidad de minutos
+     * @param segundos la cantidad de segundos
+     * @param formato el formato si es 12h o 24h
+     */
     public Horas(int horas, int minutos, int segundos, String formato) {
         setHoras(horas);
         setMinutos(minutos);
