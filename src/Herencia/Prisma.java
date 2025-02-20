@@ -1,3 +1,5 @@
+package Herencia;
+
 public class Prisma extends Cuadrado {
     private double altura;
 
