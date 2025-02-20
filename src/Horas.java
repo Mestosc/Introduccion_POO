@@ -4,14 +4,12 @@ public class Horas {
     private int minutos;
     private int segundos;
     formato formatoTiempo;
-    private String mananaTarde;
 
     public Horas(int horas, int minutos, int segundos, String formato) {
         setHoras(horas);
         setMinutos(minutos);
         setSegundos(segundos);
         setFormatoTiempo(formato);
-        setMananaTarde();
     }
     public void setFormatoTiempo(String formatoTiempo) {
         if (formatoTiempo.equals("12") || formatoTiempo.equalsIgnoreCase("f12")) {
@@ -22,23 +20,24 @@ public class Horas {
         }
     }
     /**
-     * Seteamos si es A.M. o P.M. dependiendo de como sea la hora almacenada
+     * Obtenemos A.M o P.M dependiendo de la hora que sea
      */
-    private void setMananaTarde() {
+    private String getMananaTarde() {
         if (formatoTiempo.equals(formato.F12)) {
             if (horas<=12) {
-                this.mananaTarde = "A.M.";
+                return "A.M.";
             }
             else {
-                this.mananaTarde = "P.M.";
+                return "P.M.";
             }
         }
+        return "";
     }
 
     @Override
     public String toString() {
-        if (formatoTiempo.equals(formato.F12)) return getHoras() + ":" + minutos + ":" + segundos + " " + mananaTarde;
-        else return getHoras() + ":" + minutos + ":" + segundos + " ";
+        if (formatoTiempo.equals(formato.F24)) return getHoras() + ":" + minutos + ":" + segundos;
+        else return "%d:%d:%d %s".formatted(getHoras(),minutos,segundos,getMananaTarde());
     }
 
     public int getHoras() {

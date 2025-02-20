@@ -5,6 +5,6 @@
 
 public class Main {
     public static void main(String[] args) {
-        Horas horas1 = new Horas(14,20,30,formato.F12);
+        Horas horas1 = new Horas(14,20,30,"f12");
         System.out.println(horas1);
 }}
