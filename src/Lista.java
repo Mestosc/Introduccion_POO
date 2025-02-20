@@ -8,17 +8,30 @@ public class Lista {
     public Lista(int...numeros) {
         this.numeros = numeros;
     }
+
+    /**
+     * Reemplazar valor en un indice especifico
+     * @param index el indice a reemplazar
+     * @param value el valor a reemplazar
+     */
+    public void replace(int index,int value) {
+        numeros[index] = value;
+    }
+
+    /**
+     * Insertar valor en un indice especifico
+     * @param index el indice en el que se quiere insertar un valor
+     * @param value el valor que se quiere insertar
+     */
     public void insert(int index,int value) {
         if (index==0) firstAppend(value);
         else if (index==numeros.length-1) append(value);
         else {
             int[] newNumbers = Arrays.copyOfRange(numeros, 0, index);
             int[] twoNumbers = Arrays.copyOfRange(numeros, index, numeros.length);
-            numeros = Arrays.copyOf(numeros, numeros.length + 1);
+            numeros = copyList();
             numeros[index] = value;
-            for (int i = 0; i < index; i++) {
-                numeros[i] = newNumbers[i];
-            }
+            System.arraycopy(newNumbers, 0, numeros, 0, index);
             for (int i = index+1, j = 0; i < numeros.length; i++,j++) {
                 numeros[i] = twoNumbers[j];
             }
