@@ -6,3 +6,4 @@ Los conceptos que se ven en este repositorio son:
 2. Sobrescritura de metodos
 3. Herencia y trabajo con multiples clases
 4. Polimorfismo
+5. [ENUMS](ENUMS)
