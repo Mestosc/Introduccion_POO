@@ -9,9 +9,11 @@ public class Lista {
     public int[] getNumeros() {
         return numeros;
     }
-
+    private int[] copyList() {
+        return Arrays.copyOf(numeros,numeros.length+1);
+    }
     public void firstAppend(int numero) {
-        numeros = Arrays.copyOf(numeros,numeros.length+1);
+        numeros = copyList();
         int[] new_numeros = Arrays.copyOfRange(numeros,0, numeros.length-1);
         for (int i = 1, j = 0; j < new_numeros.length; i++,j++) {
             numeros[i] = new_numeros[j];
@@ -19,7 +21,7 @@ public class Lista {
         numeros[0] = numero;
     }
     public void append(int numero) {
-        numeros = Arrays.copyOf(numeros,numeros.length+1);
+        numeros = copyList();
         numeros[numeros.length-1] = numero;
     }
 
