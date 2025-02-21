@@ -14,8 +14,9 @@ public class Lista {
      * @param index el indice a reemplazar
      * @param value el valor a reemplazar
      */
-    public void replace(int index,int value) {
+    public int replace(int index,int value) {
         numeros[index] = value;
+        return numeros[index];
     }
 
     /**
@@ -23,7 +24,7 @@ public class Lista {
      * @param index el indice en el que se quiere insertar un valor
      * @param value el valor que se quiere insertar
      */
-    public void insert(int index,int value) {
+    public int insert(int index,int value) {
         if (index==0) firstAppend(value);
         else if (index==numeros.length-1) append(value);
         else {
@@ -36,6 +37,7 @@ public class Lista {
                 numeros[i] = twoNumbers[j];
             }
         }
+        return numeros[index];
     }
     public int[] getNumeros() {
         return numeros;
