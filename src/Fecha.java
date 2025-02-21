@@ -68,15 +68,16 @@ public class Fecha {
         ano += 1;
         esBisiesto = isEsBisiesto();
     }
-    public void incrementarDia() {
+    public int incrementarDia(int diasIncrementar) {
         int diasPorMes = obtenerDiasMes();
-        if (dia<diasPorMes) { // Si el dia es inferior al limite superior del mes
-            this.dia += 1; // Incrementamos 1
+        if (diasIncrementar<diasPorMes) { // Si el dia es inferior al limite superior del mes
+            this.dia += diasIncrementar; // Incrementamos en una cantidad especifica
         }
         else { // En caso contrario
             this.dia = 1; // Dia se resetea a 1
             incrementarMes(); // Se incrementa el mes
         }
+        return dia;
     }
     public boolean equals(Fecha fecha) {
         return this.dia == fecha.dia && this.mes == fecha.mes && this.ano == fecha.ano;
