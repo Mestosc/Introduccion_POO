@@ -55,7 +55,7 @@ public class Fecha {
         if (mes < 12) {
             mes += 1;
             if (dia>obtenerDiasMes()) {
-                incrementarDia();
+                dia = 1;
             }
         }
         else if (mes==12) {
@@ -70,7 +70,7 @@ public class Fecha {
     }
     public int incrementarDia(int diasIncrementar) {
         int diasPorMes = obtenerDiasMes();
-        if (diasIncrementar<diasPorMes) { // Si el dia es inferior al limite superior del mes
+        if (diasIncrementar+dia<diasPorMes) { // Si el dia es inferior al limite superior del mes
             this.dia += diasIncrementar; // Incrementamos en una cantidad especifica
         }
         else { // En caso contrario
