@@ -37,7 +37,7 @@ public class Fecha {
      */
     private int obtenerDiasMes() {
         if (mes < 1 || mes > 12) {
-            return 1;
+            return -1;
         }
         int[] diasPorMes = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
