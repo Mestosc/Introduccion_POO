@@ -25,18 +25,18 @@ public class Lista {
      * @param value el valor que se quiere insertar
      */
     public int insert(int index,int value) {
-        if (index==0) firstAppend(value);
-        else if (index==numeros.length-1) append(value);
+        if (index==0) return firstAppend(value);
+        else if (index==numeros.length-1) return append(value);
         else {
             int[] newNumbers = Arrays.copyOfRange(numeros, 0, index);
             int[] twoNumbers = Arrays.copyOfRange(numeros, index, numeros.length);
             numeros = copyList();
             numeros[index] = value;
             System.arraycopy(newNumbers, 0, numeros, 0, index);
-            System.arraycopy(twoNumbers,0,numeros,index+1,numeros.length);
-//            for (int i = index+1, j = 0; i < numeros.length; i++,j++) {
-//                numeros[i] = twoNumbers[j];
-//            }
+           // System.arraycopy(twoNumbers,0,numeros,index,numeros.length);
+            for (int i = index+1, j = 0; i < numeros.length; i++,j++) {
+                numeros[i] = twoNumbers[j];
+            }
         }
         return numeros[index];
     }
@@ -46,17 +46,19 @@ public class Lista {
     private int[] copyList() {
         return Arrays.copyOf(numeros,numeros.length+1);
     }
-    public void firstAppend(int numero) {
+    public int firstAppend(int numero) {
         numeros = copyList();
         int[] new_numeros = Arrays.copyOfRange(numeros,0, numeros.length-1);
         for (int i = 1, j = 0; j < new_numeros.length; i++,j++) {
             numeros[i] = new_numeros[j];
         }
         numeros[0] = numero;
+        return numeros[0];
     }
-    public void append(int numero) {
+    public int append(int numero) {
         numeros = copyList();
         numeros[numeros.length-1] = numero;
+        return numeros[numeros.length-1];
     }
 
 }
