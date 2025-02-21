@@ -33,9 +33,10 @@ public class Lista {
             numeros = copyList();
             numeros[index] = value;
             System.arraycopy(newNumbers, 0, numeros, 0, index);
-            for (int i = index+1, j = 0; i < numeros.length; i++,j++) {
-                numeros[i] = twoNumbers[j];
-            }
+            System.arraycopy(twoNumbers,0,numeros,index+1,numeros.length);
+//            for (int i = index+1, j = 0; i < numeros.length; i++,j++) {
+//                numeros[i] = twoNumbers[j];
+//            }
         }
         return numeros[index];
     }
