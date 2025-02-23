@@ -32,7 +32,6 @@ public class Lista {
             int[] twoNumbers = Arrays.copyOfRange(numeros, index, numeros.length);
             numeros = copyList();
             numeros[index] = value;
-           // System.arraycopy(twoNumbers,0,numeros,index,numeros.length);
             for (int i = index+1, j = 0; i < numeros.length; i++,j++) {
                 numeros[i] = twoNumbers[j];
             }
