@@ -23,16 +23,15 @@ public class Lista {
      * Insertar valor en un indice especifico
      * @param index el indice en el que se quiere insertar un valor
      * @param value el valor que se quiere insertar
+     * @return el numero en el indice en el que si quiso insertar
      */
     public int insert(int index,int value) {
         if (index==0) return firstAppend(value);
         else if (index==numeros.length-1) return append(value);
         else {
-            int[] newNumbers = Arrays.copyOfRange(numeros, 0, index);
             int[] twoNumbers = Arrays.copyOfRange(numeros, index, numeros.length);
             numeros = copyList();
             numeros[index] = value;
-            System.arraycopy(newNumbers, 0, numeros, 0, index);
            // System.arraycopy(twoNumbers,0,numeros,index,numeros.length);
             for (int i = index+1, j = 0; i < numeros.length; i++,j++) {
                 numeros[i] = twoNumbers[j];
