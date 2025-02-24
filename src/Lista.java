@@ -8,12 +8,28 @@ public class Lista {
     public Lista(int...numeros) {
         this.numeros = numeros;
     }
+    public int delete(int index) {
+        int eliminado = numeros[index];
+        if (numeros.length==0) return 0;
+        else if (index == 0) {
+            return deleteFirst();
+        } else if (index == numeros.length - 1) {
+            return deleteLast();
+        }
+        else {
+            int[] nuevo1 = Arrays.copyOfRange(numeros,0,index);
+            int[] nuevo2 = Arrays.copyOfRange(numeros,index+1,numeros.length);
+        }
+        return eliminado;
+    }
     public int deleteFirst() {
+        if (numeros.length==0) return 0;
         int primero = numeros[0];
         numeros = Arrays.copyOfRange(numeros,1,numeros.length);
         return primero;
     }
     public int deleteLast() {
+        if (numeros.length==0) return 0;
         int ultimo = numeros[numeros.length-1];
         numeros = Arrays.copyOf(numeros,numeros.length-1);
         return ultimo;
