@@ -4,6 +4,9 @@ public class Nodo {
     public int getValor() {
         return valor;
     }
+    public Nodo(int valor) {
+        this.valor = valor;
+    }
     public void setValor(int valor) {
         this.valor = valor;
     }
