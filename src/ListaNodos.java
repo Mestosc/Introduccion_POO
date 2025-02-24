@@ -3,7 +3,20 @@ public class ListaNodos {
     private Nodo nodoIncial;
     private Nodo nodoFinal;
     int tamano;
-
+    public ListaNodos(int...num) {
+        if (num.length > 0) {
+            nodoIncial = new Nodo(num[0]); // Se inicializa con el primer valor
+            Nodo actual = nodoIncial;
+            Nodo siguiente;
+            // Se recorre el resto de los números y se añaden a la lista
+            for (int i = 1; i < num.length; i++) {
+                siguiente = new Nodo(num[i]);
+                actual.setPunteiroSeguinte(siguiente);
+                actual = siguiente;
+            }
+            nodoFinal = actual;
+        }
+    }
     public ListaNodos() {
     }
     public void engadirPrimero(int valor) {
