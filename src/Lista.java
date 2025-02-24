@@ -20,9 +20,7 @@ public class Lista {
             int[] new_num = new int[numeros.length-1];
             int[] nuevo = Arrays.copyOfRange(numeros,0,index);
             int[] nuevo2 = Arrays.copyOfRange(numeros,index+1,numeros.length);
-            for (int i = 0; i < index; i++) {
-                new_num[i] = nuevo[i];
-            }
+            System.arraycopy(nuevo, 0, new_num, 0, index);
             for (int i = index,j=0; i < new_num.length; i++,j++) {
                 new_num[i] = nuevo2[j];
             }
