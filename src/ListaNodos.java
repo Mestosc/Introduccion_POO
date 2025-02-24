@@ -50,7 +50,7 @@ public class ListaNodos {
         if (index==0) engadirPrimero(value);
         else if (index==tamano-1) engadirUltimo(value);
         else if (estaValeira()) {
-            System.out.println("La lista esta vacia asi que el indice %d no existe".formatted(index));
+            System.out.printf("La lista esta vacia asi que el indice %d no existe%n", index);
         } else {
             Nodo temp = nodoIncial;
             Nodo ant = new Nodo();
