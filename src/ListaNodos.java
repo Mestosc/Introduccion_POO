@@ -4,6 +4,7 @@ public class ListaNodos {
     private Nodo nodoFinal;
     int tamano;
     public ListaNodos(int...num) {
+        tamano=num.length;
         if (num.length > 0) {
             nodoIncial = new Nodo(num[0]); // Se inicializa con el primer valor
             Nodo actual = nodoIncial;
@@ -18,6 +19,13 @@ public class ListaNodos {
         }
     }
     public ListaNodos() {
+    }
+    public void listar() {
+        Nodo temp = nodoIncial;
+        for (int i = 0; i < tamano; i++) {
+            System.out.println(temp.getValor());
+            temp = temp.getSeguinteNodo();
+        }
     }
     public void engadirPrimero(int valor) {
         Nodo nuevo = new Nodo(valor);
