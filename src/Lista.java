@@ -9,16 +9,24 @@ public class Lista {
         this.numeros = numeros;
     }
     public int delete(int index) {
-        int eliminado = numeros[index];
         if (numeros.length==0) return 0;
-        else if (index == 0) {
+        int eliminado = numeros[index];
+        if (index == 0) {
             return deleteFirst();
         } else if (index == numeros.length - 1) {
             return deleteLast();
         }
         else {
-            int[] nuevo1 = Arrays.copyOfRange(numeros,0,index);
+            int[] new_num = new int[numeros.length-1];
+            int[] nuevo = Arrays.copyOfRange(numeros,0,index);
             int[] nuevo2 = Arrays.copyOfRange(numeros,index+1,numeros.length);
+            for (int i = 0; i < index; i++) {
+                new_num[i] = nuevo[i];
+            }
+            for (int i = index,j=0; i < new_num.length; i++,j++) {
+                new_num[i] = nuevo2[j];
+            }
+            numeros = new_num;
         }
         return eliminado;
     }
@@ -40,6 +48,7 @@ public class Lista {
      * @param value el valor a reemplazar
      */
     public int replace(int index,int value) {
+        if (numeros.length==0) return 0;
         numeros[index] = value;
         return numeros[index];
     }
