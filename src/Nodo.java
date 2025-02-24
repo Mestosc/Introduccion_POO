@@ -4,6 +4,10 @@ public class Nodo {
     public int getValor() {
         return valor;
     }
+    public Nodo(int valor, Nodo seguinte) {
+        this.valor = valor;
+        punteiroSeguinte = seguinte;
+    }
     public Nodo(int valor) {
         this.valor = valor;
     }
