@@ -1,3 +1,8 @@
+/**
+ * Nodos de una lista
+ * @author Oscar
+ * @version 1.0
+ */
 public class Nodo {
     private int valor;
     private Nodo punteiroSeguinte;

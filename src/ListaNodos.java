@@ -22,9 +22,8 @@ public class ListaNodos {
     }
     public void listar() {
         Nodo temp = nodoIncial;
-        for (int i = 0; i < tamano; i++) {
+        for (int i = 0; i < tamano; i++,temp = temp.getSeguinteNodo()) {
             System.out.println(temp.getValor());
-            temp = temp.getSeguinteNodo();
         }
     }
     public void engadirPrimero(int valor) {
@@ -54,7 +53,7 @@ public class ListaNodos {
 
     }
     public boolean estaValeira() {
-        return tamano==0 || nodoIncial==null;
+        return tamano==0 && nodoIncial==null;
     }
 
     public int getTamano() {
