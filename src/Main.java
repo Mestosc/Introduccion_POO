@@ -1,8 +1,8 @@
 public class Main {
     public static void main(String[] args) {
         ListaNodos nodos = new ListaNodos();
-        ListaNodos nodo = new ListaNodos(1,2,4);
+        int[] nums = {1,2,3,4};
+        ListaNodos nodo = new ListaNodos();
         nodo.listar();
-        System.out.println(nodo.getTamano());
     }
 }
