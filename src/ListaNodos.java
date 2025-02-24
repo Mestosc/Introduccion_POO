@@ -3,6 +3,7 @@ public class ListaNodos {
     private Nodo nodoIncial;
     private Nodo nodoFinal;
     int tamano;
+
     public ListaNodos() {
     }
     public void engadirPrimero(int valor) {
