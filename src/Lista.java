@@ -8,6 +8,11 @@ public class Lista {
     public Lista(int...numeros) {
         this.numeros = numeros;
     }
+    public int deleteFirst() {
+        int primero = numeros[0];
+        numeros = Arrays.copyOfRange(numeros,1,numeros.length);
+        return primero;
+    }
     public int deleteLast() {
         int ultimo = numeros[numeros.length-1];
         numeros = Arrays.copyOf(numeros,numeros.length-1);
