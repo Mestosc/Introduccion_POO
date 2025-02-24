@@ -1,21 +1,33 @@
-import java.util.Arrays;
 
 public class ListaNodos {
     private Nodo nodoIncial;
+    private Nodo nodoFinal;
     int tamano;
     public ListaNodos() {
     }
     public void engadirPrimero(int valor) {
+        Nodo nuevo = new Nodo(valor);
         if (estaValeira()) {
-            nodoIncial = new Nodo(valor);
+            nodoIncial = nuevo;
+            tamano++;
+        }
+        else {
+            nuevo.setPunteiroSeguinte(nodoIncial);
+            nodoIncial = nuevo;
         }
     }
     public void engadirUltimo(int valor) {
+        Nodo novo = new Nodo(valor,null);
         if (estaValeira()) {
-            nodoIncial = new Nodo(valor);
+            nodoIncial = novo;
+            nodoFinal = novo;
+            tamano=1;
         }
         else {
-
+            Nodo nodoActual = nodoFinal;
+            nodoActual.setPunteiroSeguinte(novo);
+            nodoFinal = novo;
+            tamano++;
         }
 
     }
