@@ -18,6 +18,34 @@ public class ListaNodos {
             nodoFinal = actual;
         }
     }
+    public void deleteFirst() {
+        nodoIncial = nodoIncial.getSeguinteNodo();
+        tamano--;
+    }
+    public void deleteLast() {
+        tamano--;
+        Nodo temp = nodoIncial;
+        for (int i = 0; i < tamano; i++) {
+            if (i==tamano-1) temp.setPunteiroSeguinte(null);
+            else temp = temp.getSeguinteNodo();
+        }
+        nodoFinal = temp;
+    }
+    public void deleteElement(int index) {
+        if (index==0) deleteFirst();
+        else if (index == tamano) deleteLast();
+        Nodo temp = nodoIncial;
+        Nodo ant = new Nodo();
+        Nodo nes;
+        for (int i = 0; i < index; i++) {
+            if (i==index-1) ant = temp;
+            temp = temp.getSeguinteNodo();
+        }
+        nes = temp.getSeguinteNodo();
+        ant.setPunteiroSeguinte(nes);
+        tamano--;
+
+    }
     public void insert(int index,int value) {
         if (index==0) engadirPrimero(value);
         else if (index==tamano-1) engadirUltimo(value);
@@ -31,8 +59,8 @@ public class ListaNodos {
                 temp = temp.getSeguinteNodo();
             }
             Nodo nuevo = new Nodo(value,temp);
-            tamano++;
             ant.setPunteiroSeguinte(nuevo);
+            tamano++;
     }}
     public ListaNodos() {
     }
