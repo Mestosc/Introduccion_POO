@@ -8,7 +8,11 @@ public class Lista {
     public Lista(int...numeros) {
         this.numeros = numeros;
     }
-
+    public int deleteLast() {
+        int ultimo = numeros[numeros.length-1];
+        numeros = Arrays.copyOf(numeros,numeros.length-1);
+        return ultimo;
+    }
     /**
      * Reemplazar valor en un indice especifico
      * @param index el indice a reemplazar
