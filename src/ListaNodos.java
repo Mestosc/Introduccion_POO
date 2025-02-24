@@ -18,6 +18,22 @@ public class ListaNodos {
             nodoFinal = actual;
         }
     }
+    public void insert(int index,int value) {
+        if (index==0) engadirPrimero(value);
+        else if (index==tamano-1) engadirUltimo(value);
+        else if (estaValeira()) {
+            System.out.println("La lista esta vacia asi que el indice %d no existe".formatted(index));
+        } else {
+            Nodo temp = nodoIncial;
+            Nodo ant = new Nodo();
+            for (int i = 0; i < index; i++) {
+                if (i==index-1) ant = temp;
+                temp = temp.getSeguinteNodo();
+            }
+            Nodo nuevo = new Nodo(value,temp);
+            tamano++;
+            ant.setPunteiroSeguinte(nuevo);
+    }}
     public ListaNodos() {
     }
     public void listar() {
