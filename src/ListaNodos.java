@@ -89,8 +89,7 @@ public class ListaNodos {
             tamano=1;
         }
         else {
-            Nodo nodoActual = nodoFinal;
-            nodoActual.setPunteiroSeguinte(novo);
+            nodoFinal.setPunteiroSeguinte(novo);
             nodoFinal = novo;
             tamano++;
         }
