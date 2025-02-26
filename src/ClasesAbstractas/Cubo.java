@@ -9,16 +9,16 @@ public class Cubo extends Solido{
 
     @Override
     public double calcularVolume() {
-        return 0;
+        return Math.pow(lado,3);
     }
 
     @Override
     public double calcularArea() {
-        return 0;
+        return lado*lado*6;
     }
 
     @Override
     String aCadea() {
-        return "";
+        return "El lado es" + lado + " su area es "+ calcularArea() + " esta ubicado en " + getX() + " " + getY();
     }
 }
