@@ -19,4 +19,5 @@ abstract public class PuntoB {
     public void setY(double y) {
         this.y = y;
     }
+    abstract void aCadea();
 }
