@@ -16,7 +16,7 @@ public class Cuadrado extends FiguraXeometrica {
     }
 
     @Override
-    void aCadea() {
-        System.out.println("X:" + getX() + " Y:" + getY() + " Area:" + calcularArea());
+    String aCadea() {
+        return "X:" + getX() + " Y:" + getY() + " Area:" + calcularArea();
     }
 }
