@@ -18,6 +18,17 @@ public class ListaNodos {
             nodoFinal = actual;
         }
     }
+    public int get(int index) {
+        if (index==0) return nodoIncial.getValor();
+        else if (index==tamano-1) return nodoFinal.getValor();
+        else {
+            Nodo temp = nodoIncial;
+            for (int i = 0; i < index; i++) {
+                temp = temp.getSeguinteNodo();
+            }
+            return temp.getValor();
+        }
+    }
     public void deleteFirst() {
         nodoIncial = nodoIncial.getSeguinteNodo();
         tamano--;
