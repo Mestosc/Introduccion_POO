@@ -46,11 +46,15 @@ public class Horas {
 
     @Override
     public String toString() {
-        if (formatoTiempo == formato.F24) return "%d:%d:%d".formatted(horas,minutos,segundos);
-        else return "%d:%d:%d %s".formatted(horas-12,minutos,segundos,getMananaTarde());
+        if (formatoTiempo == formato.F24) return "%d:%d:%d".formatted(getHoras(),minutos,segundos);
+        else return "%d:%d:%d %s".formatted(getHoras(),minutos,segundos,getMananaTarde());
     }
 
     public int getHoras() {
+        if (formatoTiempo == formato.F12) {
+            if (horas==0) return horas+12;
+            else if (horas>12) return horas-12;
+        }
         return horas;
     }
 
