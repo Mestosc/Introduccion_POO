@@ -3,7 +3,7 @@ package ClasesAbstractas;
 abstract public class PuntoB {
     private double x;
     private double y;
-
+    public PuntoB() {}
     public double getX() {
         return x;
     }
