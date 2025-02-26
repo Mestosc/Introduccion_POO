@@ -2,6 +2,7 @@ package ClasesAbstractas;
 
 abstract public class Solido extends FiguraXeometrica {
     double altura;
+    public Solido() {}
     public Solido(double x, double y, double altura) {
         super(x,y);
         setAltura(altura);

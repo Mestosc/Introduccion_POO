@@ -18,6 +18,6 @@ public class Cilindro extends Solido {
 
     @Override
     String aCadea() {
-        return "";
+        return "Radio:"+ radio + " X:"+getX()+" Y:"+getY()+" Altura:"+altura;
     }
 }
