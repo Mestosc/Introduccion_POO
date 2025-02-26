@@ -1,6 +1,6 @@
 package ClasesAbstractas;
 
-public class Cuadrado extends FiguraXeometrica{
+public class Cuadrado extends FiguraXeometrica {
     int lado;
     public Cuadrado(double x, double y, int lado) {
         this(lado);
