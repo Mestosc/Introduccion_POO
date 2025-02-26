@@ -1,13 +1,10 @@
 package ClasesAbstractas;
 
 public class Cilindro extends Solido {
-    double altura;
     double radio;
     public Cilindro(double x, double y,double altura, double radio) {
-        setX(x);
-        setY(y);
+        super(x,y,altura);
         this.radio = radio;
-        this.altura = altura;
     }
     @Override
     public double calcularVolume() {
