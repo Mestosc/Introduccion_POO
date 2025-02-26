@@ -11,7 +11,7 @@ public class Nodo {
     }
     public Nodo() {}
     public Nodo(int valor, Nodo seguinte) {
-        this.valor = valor;
+        setValor(valor);
         punteiroSeguinte = seguinte;
     }
     public Nodo(int valor) {
