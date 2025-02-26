@@ -7,7 +7,7 @@ public class Cuadrado extends FiguraXeometrica {
         this.lado = lado;
     }
     public Cuadrado(int lado) {
-        this.lado = lado;
+        this(0,0,lado);
     }
     @Override
     public double calcularArea() {
