@@ -3,8 +3,8 @@ package ClasesAbstractas;
 public class Cuadrado extends FiguraXeometrica {
     int lado;
     public Cuadrado(double x, double y, int lado) {
-        super(x,y);
-        this.lado = lado;
+        super(x, y);
+        setLado(lado);
     }
     public Cuadrado(int lado) {
         this(0,0,lado);
@@ -17,5 +17,8 @@ public class Cuadrado extends FiguraXeometrica {
     @Override
     String aCadea() {
         return "X:" + getX() + " Y:" + getY() + " Area:" + calcularArea();
+    }
+    public void setLado(int lado) {
+        this.lado = Math.abs(lado);
     }
 }
