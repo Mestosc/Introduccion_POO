@@ -16,7 +16,7 @@ public class Cuadrado extends FiguraXeometrica {
 
     @Override
     String aCadea() {
-        return "X:" + getX() + " Y:" + getY() + " Area:" + calcularArea();
+        return "X:" + getX() + " Y:" + getY() + " Lado:" + lado +" Area:" + calcularArea();
     }
     public void setLado(int lado) {
         this.lado = Math.abs(lado);
