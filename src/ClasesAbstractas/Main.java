@@ -7,5 +7,6 @@ public class Main {
         Perro perro1 = new Perro("Amigo",2);
         perro1.comer();
         perro1.mamar();
+        perro1.voz();
     }
 }
