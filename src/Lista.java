@@ -13,7 +13,7 @@ public class Lista {
         int eliminado = numeros[index];
         if (index == 0) {
             return deleteFirst();
-        } else if (index == numeros.length - 1) {
+        } else if (index >= numeros.length - 1) {
             return deleteLast();
         }
         else {
@@ -58,8 +58,8 @@ public class Lista {
      * @return el numero en el indice en el que si quiso insertar
      */
     public int insert(int index,int value) {
-        if (index==0) return firstAppend(value);
-        else if (index==numeros.length-1) return append(value);
+        if (index<=0) return firstAppend(value);
+        else if (index>=numeros.length-1) return append(value);
         else {
             int[] twoNumbers = Arrays.copyOfRange(numeros, index, numeros.length);
             numeros = copyList();
