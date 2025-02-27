@@ -7,8 +7,11 @@ public abstract class Animal {
         setNombre(nombre);
         setEdad(edad);
     }
+    private String obtenerNombreAnimal() {
+        return getClass().getName().substring(getClass().getName().indexOf(".")+1);
+    }
     public void comer() {
-        System.out.printf("%s come%n",nombre);
+        System.out.printf("El animal %s llamado %s come%n",obtenerNombreAnimal(),nombre);
     }
     public void dormir() {
         System.out.printf("%s duerme%n",nombre);
