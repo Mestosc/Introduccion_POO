@@ -1,6 +1,6 @@
 package ClasesAbstractas;
 
-public class Perro extends Mamiferos {
+public class Perro extends Mamiferos implements Son {
     public Perro(String nombre, int edad) {
         super(nombre,edad);
     }
@@ -15,4 +15,8 @@ public class Perro extends Mamiferos {
         System.out.println("Se desplaza a cuatro patas");
     }
 
+    @Override
+    public void voz() {
+        System.out.println("Guau guau");
+    }
 }
