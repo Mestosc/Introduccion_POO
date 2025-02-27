@@ -1,6 +1,6 @@
 package ClasesAbstractas;
 
-public class Perro extends Animal {
+public class Perro extends Mamiferos {
     public Perro(String nombre, int edad) {
         super(nombre,edad);
     }

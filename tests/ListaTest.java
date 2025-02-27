@@ -13,7 +13,8 @@ class ListaTest {
                     "4,3,4",
                     "-1,0,-1",
                     "8,10,8",
-                    "-1,-1,-1"
+                    "-1,-1,-1",
+                    "2,1,2"
     })
     void insert(int numInsert, int index, int expected) {
         assertEquals(expected,lista1.insert(index,numInsert));

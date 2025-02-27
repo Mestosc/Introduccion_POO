@@ -6,5 +6,6 @@ public class Main {
         serpiente1.comer();
         Perro perro1 = new Perro("Amigo",2);
         perro1.comer();
+        perro1.mamar();
     }
 }
