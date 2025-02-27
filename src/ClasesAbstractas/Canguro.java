@@ -6,6 +6,11 @@ public class Canguro extends Mamiferos {
     }
 
     @Override
+    public void parir() {
+        System.out.println("El canguro pare con su saco");
+    }
+
+    @Override
     void desprazar() {
         System.out.println("O canguro desprazase saltando");
     }
