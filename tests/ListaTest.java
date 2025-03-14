@@ -17,6 +17,6 @@ class ListaTest {
                     "2,1,2"
     })
     void insert(int numInsert, int index, int expected) {
-        assertEquals(expected,lista1.insert(index,numInsert));
+        assertEquals(expected,lista1.insert(index,numInsert), () -> "In " + index + "rd index " + "must be this number:" + numInsert);
     }
 }
