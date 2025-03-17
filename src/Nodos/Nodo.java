@@ -1,3 +1,5 @@
+package Nodos;
+
 /**
  * Nodos de una lista
  * @author Oscar

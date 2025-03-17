@@ -1,8 +1,17 @@
+package Nodos;
 
+/**
+ * Implementa una lista mediante nodos
+ */
 public class ListaNodos {
     private Nodo nodoIncial;
     private Nodo nodoFinal;
-    int tamano;
+    private int tamano;
+
+    /**
+     * Añadir escribiendo numeros directamente una nuva lista de nodos
+     * @param num permite introducir los numeros que quieras
+     */
     public ListaNodos(int...num) {
         tamano=num.length;
         if (num.length > 0) {
@@ -45,6 +54,7 @@ public class ListaNodos {
     public void deleteElement(int index) {
         if (index==0) deleteFirst();
         else if (index == tamano) deleteLast();
+        else {
         Nodo temp = nodoIncial;
         Nodo ant = new Nodo();
         Nodo nes;
@@ -55,11 +65,12 @@ public class ListaNodos {
         nes = temp.getSeguinteNodo();
         ant.setPunteiroSeguinte(nes);
         tamano--;
+        }
 
     }
     public void insert(int index,int value) {
         if (index==0) engadirPrimero(value);
-        else if (index==tamano-1) engadirUltimo(value);
+        else if (index==tamano-1) append(value);
         else if (estaValeira()) {
             System.out.printf("La lista esta vacia asi que el indice %d no existe%n", index);
         } else {
@@ -83,16 +94,13 @@ public class ListaNodos {
     }
     public void engadirPrimero(int valor) {
         Nodo nuevo = new Nodo(valor);
-        if (estaValeira()) {
-            nodoIncial = nuevo;
-            tamano++;
-        }
-        else {
+        if (!estaValeira()) {
             nuevo.setPunteiroSeguinte(nodoIncial);
-            nodoIncial = nuevo;
         }
+        nodoIncial = nuevo;
+
     }
-    public void engadirUltimo(int valor) {
+    public void append(int valor) {
         Nodo novo = new Nodo(valor,null);
         if (estaValeira()) {
             nodoIncial = novo;
