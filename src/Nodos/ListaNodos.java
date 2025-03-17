@@ -30,7 +30,10 @@ public class ListaNodos {
         }
     }
     public int get(int index) {
-        if (index==0) return nodoIncial.getValor();
+        if (estaValeira() || index<0 || index>= tamano) {
+            throw new IndexOutOfBoundsException("Indice fuera de rango");
+        }
+        else if (index==0) return nodoIncial.getValor();
         else if (index==tamano-1) return nodoFinal.getValor();
         else {
             Nodo temp = nodoIncial;
@@ -45,6 +48,9 @@ public class ListaNodos {
             nodoIncial = nodoIncial.getSeguinteNodo();
             tamano--;
         }
+        else {
+            throw new IndexOutOfBoundsException("Se trata de eliminar un indice inexistente");
+        }
     }
     public void deleteLast() {
         if (!estaValeira()) {
@@ -56,55 +62,50 @@ public class ListaNodos {
         }
         nodoFinal = temp;
         }
+        else {
+            throw new IndexOutOfBoundsException("Se trata de eliminar un indice inexistente");
+        }
     }
     public void deleteElement(int index) {
-        if (index==0) deleteFirst();
-        else if (index == tamano-1) deleteLast();
+        if (estaValeira() || index<0 || index>=tamano) {
+            throw new IndexOutOfBoundsException("Se trata de eliminar un indice inexistente");
+        }
         else {
-        Nodo temp = nodoIncial;
-        Nodo ant = new Nodo();
-        Nodo nes;
-        for (int i = 0; i < index; i++) {
-            if (i==index-1) ant = temp;
-            temp = temp.getSeguinteNodo();
+            if (index == 0) deleteFirst();
+            else if (index == tamano - 1) deleteLast();
+            else {
+                Nodo temp = nodoIncial;
+                Nodo ant = new Nodo();
+                Nodo nes;
+                for (int i = 0; i < index; i++) {
+                    if (i == index - 1) ant = temp;
+                    temp = temp.getSeguinteNodo();
+                }
+                nes = temp.getSeguinteNodo();
+                ant.setPunteiroSeguinte(nes);
+                tamano--;
+            }
         }
-        nes = temp.getSeguinteNodo();
-        ant.setPunteiroSeguinte(nes);
-        tamano--;
-        }
-
     }
     public void insert(int index,int value) {
-        if (index==0) engadirPrimero(value);
-        else if (index==tamano-1) append(value);
-        else if (index>=tamano) {
-            System.out.println("Imposible añadir a una posicion inexsitente");
+        if (estaValeira() || index<0 || index>=tamano) {
+            throw new IndexOutOfBoundsException("Se trata de añadir un numero a un indice fuera de rango");
         }
-        else if (estaValeira()) {
-            if (index>0) {
-            System.out.printf("La lista esta vacia asi que el indice %d no existe%n", index);
-            }
-            else {
-                append(value);
-            }}
         else {
-            Nodo temp = nodoIncial;
-            Nodo ant = new Nodo();
-            for (int i = 0; i < index; i++) {
-                if (i==index-1) ant = temp;
-                temp = temp.getSeguinteNodo();
-            }
-            Nodo nuevo = new Nodo(value,temp);
-            ant.setPunteiroSeguinte(nuevo);
-            tamano++;
-    }}
+            if (index==0) engadirPrimero(value);
+            else if (index==tamano-1) append(value);
+            else {
+                Nodo temp = nodoIncial;
+                Nodo ant = new Nodo();
+                for (int i = 0; i < index; i++) {
+                    if (i==index-1) ant = temp;
+                    temp = temp.getSeguinteNodo();
+                }
+                Nodo nuevo = new Nodo(value,temp);
+                ant.setPunteiroSeguinte(nuevo);
+                tamano++;
+    }}}
     public ListaNodos() {
-    }
-    public void listar() {
-        Nodo temp = nodoIncial;
-        for (int i = 0; i < tamano; i++,temp = temp.getSeguinteNodo()) {
-            System.out.println(temp.getValor());
-        }
     }
     public void engadirPrimero(int valor) {
         Nodo nuevo = new Nodo(valor);
