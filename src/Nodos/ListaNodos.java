@@ -2,6 +2,8 @@ package Nodos;
 
 /**
  * Implementa una lista mediante nodos
+ * @version 0.9
+ * @author Oscar Rodriguez
  */
 public class ListaNodos {
     private Nodo nodoIncial;
@@ -39,10 +41,13 @@ public class ListaNodos {
         }
     }
     public void deleteFirst() {
-        nodoIncial = nodoIncial.getSeguinteNodo();
-        tamano--;
+        if (!estaValeira()) {
+            nodoIncial = nodoIncial.getSeguinteNodo();
+            tamano--;
+        }
     }
     public void deleteLast() {
+        if (!estaValeira()) {
         tamano--;
         Nodo temp = nodoIncial;
         for (int i = 0; i < tamano; i++) {
@@ -50,10 +55,11 @@ public class ListaNodos {
             else temp = temp.getSeguinteNodo();
         }
         nodoFinal = temp;
+        }
     }
     public void deleteElement(int index) {
         if (index==0) deleteFirst();
-        else if (index == tamano) deleteLast();
+        else if (index == tamano-1) deleteLast();
         else {
         Nodo temp = nodoIncial;
         Nodo ant = new Nodo();
@@ -71,9 +77,17 @@ public class ListaNodos {
     public void insert(int index,int value) {
         if (index==0) engadirPrimero(value);
         else if (index==tamano-1) append(value);
+        else if (index>=tamano) {
+            System.out.println("Imposible añadir a una posicion inexsitente");
+        }
         else if (estaValeira()) {
+            if (index>0) {
             System.out.printf("La lista esta vacia asi que el indice %d no existe%n", index);
-        } else {
+            }
+            else {
+                append(value);
+            }}
+        else {
             Nodo temp = nodoIncial;
             Nodo ant = new Nodo();
             for (int i = 0; i < index; i++) {
@@ -98,20 +112,19 @@ public class ListaNodos {
             nuevo.setPunteiroSeguinte(nodoIncial);
         }
         nodoIncial = nuevo;
+        tamano++;
 
     }
     public void append(int valor) {
         Nodo novo = new Nodo(valor,null);
         if (estaValeira()) {
             nodoIncial = novo;
-            nodoFinal = novo;
-            tamano=1;
         }
         else {
             nodoFinal.setPunteiroSeguinte(novo);
-            nodoFinal = novo;
-            tamano++;
         }
+        nodoFinal = novo;
+        tamano++;
 
     }
     public boolean estaValeira() {
