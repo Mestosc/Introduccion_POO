@@ -5,7 +5,7 @@ package CosasVarias;
  * @version 0.9
  * @author Oscar Rodriguez
  */
-public class Pila implements Cola {
+public class Pila implements Lifo {
     private Nodo nodoIncial;
     private Nodo nodoFinal;
     private int tamano;
@@ -29,6 +29,13 @@ public class Pila implements Cola {
             nodoFinal = actual;
         }
     }
+    /// Metodo para obtener el `n` elemento de la Pila
+    /// ```java
+    /// Pila pila = new Pila(1,2,3,4)
+    /// pila.get(1) // Obtiene el elemento del indice 1 que es 2
+    /// ```
+    /// @author Oscar Rodriguez
+    /// @since 2025-03-17
     public int get(int index) {
         if (estaValeira() || index<0 || index>= tamano) {
             throw new IndexOutOfBoundsException("Indice fuera de rango");
@@ -143,7 +150,7 @@ public class Pila implements Cola {
 
     @Override
     public int desencolar() {
-        int valor_eliminado=nodoIncial.getValor();
+        int valor_eliminado=get(0);
         if (!estaValeira()) {
             nodoIncial = nodoIncial.getSeguinteNodo();
             tamano--;

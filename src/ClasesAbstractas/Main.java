@@ -8,7 +8,8 @@ public class Main {
         animalhacer(serpiente1);
     }
     static void animalhacer(Animal animal) {
-        if (animal instanceof Mamiferos anim) {
+        if (animal instanceof Mamiferos) {
+            Mamiferos anim = (Mamiferos) animal;
             anim.parir();
         }
         else {

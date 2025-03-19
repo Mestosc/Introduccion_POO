@@ -1,6 +1,6 @@
 package CosasVarias;
 
-public interface Cola {
+public interface Lifo {
     void encolar(int valor);
     int desencolar();
 }
