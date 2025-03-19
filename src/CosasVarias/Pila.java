@@ -29,7 +29,7 @@ public class Pila implements Lifo {
             nodoFinal = actual;
         }
     }
-    /// Metodo para obtener el `n` elemento de la Pila
+    /// Metodo para obtener el `n` elemento de la [Pila]
     /// ```java
     /// Pila pila = new Pila(1,2,3,4)
     /// pila.get(1) // Obtiene el elemento del indice 1 que es 2
@@ -40,14 +40,31 @@ public class Pila implements Lifo {
         if (estaValeira() || index<0 || index>= tamano) {
             throw new IndexOutOfBoundsException("Indice fuera de rango");
         }
-        else if (index==0) return nodoIncial.getValor();
-        else if (index==tamano-1) return nodoFinal.getValor();
         else {
             Nodo temp = nodoIncial;
             for (int i = 0; i < index; i++) {
                 temp = temp.getSeguinteNodo();
             }
             return temp.getValor();
+        }
+    }
+    /// Metodo para obtener el `n` objeto [Nodo] de la [Pila]
+    /// ```java
+    /// Pila pila = new Pila(1,2,3,4)
+    /// pila.get(1) // Obtiene el objeto Nodo del indice 1 que es la referencia que sea
+    /// ```
+    /// @author Oscar Rodriguez
+    /// @since 2025-03-17
+    public Nodo getObjectNodo(int index) {
+        if (estaValeira() || index<0 || index>= tamano) {
+            throw new IndexOutOfBoundsException("Indice fuera de rango");
+        }
+        else {
+            Nodo temp = nodoIncial;
+            for (int i = 0; i < index; i++) {
+                temp = temp.getSeguinteNodo();
+            }
+            return temp;
         }
     }
     public void deleteFirst() {
@@ -150,10 +167,9 @@ public class Pila implements Lifo {
 
     @Override
     public int desencolar() {
-        int valor_eliminado=get(0);
+        int valor_eliminado=get(tamano-1);
         if (!estaValeira()) {
-            nodoIncial = nodoIncial.getSeguinteNodo();
-            tamano--;
+            deleteLast();
         }
         else {
             throw new IndexOutOfBoundsException("Se trata de eliminar un indice inexistente");

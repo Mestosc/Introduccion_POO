@@ -33,8 +33,6 @@ public class ListaNodos {
         if (estaValeira() || index<0 || index>= tamano) {
             throw new IndexOutOfBoundsException("Indice fuera de rango");
         }
-        else if (index==0) return nodoIncial.getValor();
-        else if (index==tamano-1) return nodoFinal.getValor();
         else {
             Nodo temp = nodoIncial;
             for (int i = 0; i < index; i++) {
