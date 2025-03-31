@@ -128,7 +128,10 @@ public class Pila implements Lifo {
                 Nodo nuevo = new Nodo(value,temp);
                 ant.setPunteiroSeguinte(nuevo);
                 tamano++;
-    }}}
+
+            }
+        }
+    }
     public Pila() {
     }
     public void engadirPrimero(int valor) {
@@ -167,9 +170,9 @@ public class Pila implements Lifo {
 
     @Override
     public int desencolar() {
-        int valor_eliminado=get(tamano-1);
+        int valor_eliminado=nodoIncial.getValor();
         if (!estaValeira()) {
-            deleteLast();
+            deleteFirst();
         }
         else {
             throw new IndexOutOfBoundsException("Se trata de eliminar un indice inexistente");

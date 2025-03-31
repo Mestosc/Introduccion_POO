@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Personaxe {
     private String nome;
     private int vida;
@@ -62,4 +64,9 @@ public class Personaxe {
     public void setExperiencia(int experiencia) {
         this.experiencia = experiencia;
     }
+	@Override
+	public String toString() {
+		return "Personaxe [nome=" + nome + ", vida=" + vida + ", forza=" + forza + ", velocidade=" + velocidade
+				+ ", experiencia=" + experiencia + ", equipamientos=" + Arrays.toString(equipamientos) + "]";
+	}
 }

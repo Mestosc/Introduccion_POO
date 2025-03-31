@@ -36,19 +36,22 @@ public class Centro {
     public double getX() {
         return x;
     }
-    public void setX(double x) {
+    public void setX(double x) throws PuntoFueraPrimerCuadrante {
         if (x>=0) this.x = x;
+        else throw new PuntoFueraPrimerCuadrante();
     }
     public void setX(int x) {
         if (x>=0) this.x = x;
+        else throw new PuntoFueraPrimerCuadrante();
     }
 
     public double getY() {
         return y;
     }
 
-    public void setY(double y) {
+    public void setY(double y) throws PuntoFueraPrimerCuadrante {
         if (y>=0) this.y = y;
+	    else throw new PuntoFueraPrimerCuadrante();
     }
     public void setY(int y) {
         if (y>=0) this.y = y;

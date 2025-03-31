@@ -30,7 +30,7 @@ public class ListaNodos {
         }
     }
     public int get(int index) {
-        if (estaValeira() || index<0 || index>= tamano) {
+        if (index<0 || index>= tamano) {
             throw new IndexOutOfBoundsException("Indice fuera de rango");
         }
         else {
