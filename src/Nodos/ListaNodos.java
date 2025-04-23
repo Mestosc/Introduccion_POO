@@ -27,7 +27,7 @@ public class ListaNodos<T> {
                 actual.setPunteiroSeguinte(siguiente);
                 actual = siguiente;
             }
-            nodoFinal = actual;
+            nodoFinal = actual; // El nodo actual despues de haber recorrido el array es el nodo final
         }
     }
     public T get(int index) {
@@ -103,7 +103,9 @@ public class ListaNodos<T> {
                 Nodo<T> nuevo = new Nodo<>(value,temp);
                 ant.setPunteiroSeguinte(nuevo);
                 tamano++;
-    }}}
+            }
+        }
+    }
     public ListaNodos() {
     }
     public void engadirPrimero(T valor) {
