@@ -1,10 +1,5 @@
 package Nodos;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-
 /**
  * Implementa una lista mediante nodos
  * @version 0.9
@@ -23,12 +18,12 @@ public class ListaNodos<T> {
     public ListaNodos(T...element) {
         tamano=element.length;
         if (element.length > 0) {
-            nodoIncial = new Nodo<T>(element[0]); // Se inicializa con el primer valor
+            nodoIncial = new Nodo<>(element[0]); // Se inicializa con el primer valor
             Nodo<T> actual = nodoIncial;
             Nodo<T> siguiente;
             // Se recorre el resto de los números y se añaden a la lista
             for (int i = 1; i < element.length; i++) {
-                siguiente = new Nodo<T>(element[i]);
+                siguiente = new Nodo<>(element[i]);
                 actual.setPunteiroSeguinte(siguiente);
                 actual = siguiente;
             }
@@ -79,7 +74,7 @@ public class ListaNodos<T> {
             else if (index == tamano - 1) deleteLast();
             else {
                 Nodo<T> temp = nodoIncial;
-                Nodo<T> ant = new Nodo<T>();
+                Nodo<T> ant = new Nodo<>();
                 Nodo<T> nes;
                 for (int i = 0; i < index; i++) {
                     if (i == index - 1) ant = temp;
@@ -100,19 +95,19 @@ public class ListaNodos<T> {
             else if (index==tamano-1) append(value);
             else {
                 Nodo<T> temp = nodoIncial;
-                Nodo<T> ant = new Nodo<T>();
+                Nodo<T> ant = new Nodo<>();
                 for (int i = 0; i < index; i++) {
                     if (i==index-1) ant = temp;
                     temp = temp.getSeguinteNodo();
                 }
-                Nodo<T> nuevo = new Nodo<T>(value,temp);
+                Nodo<T> nuevo = new Nodo<>(value,temp);
                 ant.setPunteiroSeguinte(nuevo);
                 tamano++;
     }}}
     public ListaNodos() {
     }
     public void engadirPrimero(T valor) {
-        Nodo<T> nuevo = new Nodo<T>(valor);
+        Nodo<T> nuevo = new Nodo<>(valor);
         if (!estaValeira()) {
             nuevo.setPunteiroSeguinte(nodoIncial);
         }
@@ -121,7 +116,7 @@ public class ListaNodos<T> {
 
     }
     public void append(T valor) {
-        Nodo<T> novo = new Nodo<T>(valor,null);
+        Nodo<T> novo = new Nodo<>(valor,null);
         if (estaValeira()) {
             nodoIncial = novo;
         }
