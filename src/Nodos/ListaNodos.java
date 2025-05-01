@@ -65,6 +65,10 @@ public class ListaNodos<T> {
             throw new IndexOutOfBoundsException("Se trata de eliminar un indice inexistente");
         }
     }
+    /**
+     * Elimina un elemento que usted especifique 
+     * @param index El indice del elemento a eliminar
+     **/
     public void deleteElement(int index) {
         if (estaValeira() || index<0 || index>=tamano) {
             throw new IndexOutOfBoundsException("Se trata de eliminar un indice inexistente");
@@ -86,6 +90,11 @@ public class ListaNodos<T> {
             }
         }
     }
+    /**
+     * Inserta un valor especifico en un indice especifico 
+     * @param index El indice en el que introducir
+     * @param value El valor a introducir en la lista 
+     **/
     public void insert(int index,T value) {
         if (estaValeira() || index<0 || index>=tamano) {
             throw new IndexOutOfBoundsException("Se trata de añadir un numero a un indice fuera de rango");
