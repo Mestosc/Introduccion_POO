@@ -1,5 +1,9 @@
 package Herencia;
-
+/**
+* Define un cuadrado 
+* @author: Oscar
+* @version: 1.0
+**/
 public class Cuadrado {
     double lado;
 

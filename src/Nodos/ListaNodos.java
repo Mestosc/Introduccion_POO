@@ -31,16 +31,14 @@ public class ListaNodos<T> {
         }
     }
     public T get(int index) {
-        if (index<0 || index>= tamano) {
+        if (estaValeira() || index<0 || index>= tamano) {
             throw new IndexOutOfBoundsException("Indice fuera de rango");
         }
-        else {
             Nodo<T> temp = nodoIncial;
             for (int i = 0; i < index; i++) {
                 temp = temp.getSeguinteNodo();
             }
             return temp.getValor();
-        }
     }
     public void deleteFirst() {
         if (!estaValeira()) {
@@ -73,10 +71,9 @@ public class ListaNodos<T> {
         if (estaValeira() || index<0 || index>=tamano) {
             throw new IndexOutOfBoundsException("Se trata de eliminar un indice inexistente");
         }
+        if (index == 0) deleteFirst();
+        else if (index == tamano - 1) deleteLast();
         else {
-            if (index == 0) deleteFirst();
-            else if (index == tamano - 1) deleteLast();
-            else {
                 Nodo<T> temp = nodoIncial;
                 Nodo<T> ant = new Nodo<>();
                 Nodo<T> nes;
@@ -88,7 +85,6 @@ public class ListaNodos<T> {
                 ant.setPunteiroSeguinte(nes);
                 tamano--;
             }
-        }
     }
     /**
      * Inserta un valor especifico en un indice especifico 

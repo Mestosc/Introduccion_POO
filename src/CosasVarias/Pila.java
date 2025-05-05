@@ -170,13 +170,13 @@ public class Pila implements Lifo {
 
     @Override
     public int desencolar() {
-        int valor_eliminado=nodoIncial.getValor();
+        int valorEliminado=nodoIncial.getValor();
         if (!estaValeira()) {
             deleteFirst();
         }
         else {
             throw new IndexOutOfBoundsException("Se trata de eliminar un indice inexistente");
         }
-        return valor_eliminado;
+        return valorEliminado;
     }
 }

@@ -8,6 +8,7 @@ package Nodos;
 public class Nodo<T> {
     private T valor;
     private Nodo<T> punteiroSeguinte;
+
     public T getValor() {
         return valor;
     }
@@ -22,6 +23,10 @@ public class Nodo<T> {
     public void setValor(T valor) {
         this.valor = valor;
     }
+    /**
+     * Obtener el siguiente nodo 
+     * @return El nodo siguiente
+     **/
     public Nodo<T> getSeguinteNodo() {
         return punteiroSeguinte;
     }
