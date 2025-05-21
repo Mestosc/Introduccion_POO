@@ -1,11 +1,12 @@
 package Nodos;
 
+
 /**
  * Implementa una lista mediante nodos
  * @version 0.9
  * @author Oscar Rodriguez
  */
-public class ListaNodos<T> {
+public class ListaNodos<T>{
     private Nodo<T> nodoIncial;
     private Nodo<T> nodoFinal;
     private int tamano;
@@ -141,4 +142,5 @@ public class ListaNodos<T> {
     public int getTamano() {
         return tamano;
     }
+
 }
