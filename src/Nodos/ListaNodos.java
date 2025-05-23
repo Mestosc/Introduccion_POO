@@ -177,8 +177,8 @@ public class ListaNodos<T> implements Iterable<T> {
         Iterator<T> it = this.iterator();
         while (it.hasNext()) {
             T valor = it.next();
-            if (!it.hasNext()) cadena.append(valor);
-            else cadena.append(valor).append(",");
+            if (!it.hasNext()) cadena.append(valor.toString());
+            else cadena.append(valor.toString()).append(",");
         }
         cadena.append("}");
         return cadena.toString();
