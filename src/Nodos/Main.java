@@ -6,8 +6,8 @@ public class Main {
         nodo.append(300);
         System.out.println(nodo.get(nodo.getTamano()-1));
         ListaNodos<String> cadenas = new ListaNodos<>("Hola","individuo","eres","tu","quien","crees");
-        for (Integer c : nodo) {
-            System.out.println(c);
+        for (String cadena : cadenas) {
+            System.out.println(cadena);
         }
     }
 }

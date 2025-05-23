@@ -2,7 +2,6 @@ package Nodos;
 
 
 import java.util.Iterator;
-import java.util.List;
 import java.util.NoSuchElementException;
 
 /**
@@ -10,7 +9,7 @@ import java.util.NoSuchElementException;
  * @version 0.9
  * @author Oscar Rodriguez
  */
-public class ListaNodos<T> implements Iterable<T>{
+public class ListaNodos<T> implements Iterable<T> {
     private Nodo<T> nodoIncial;
     private Nodo<T> nodoFinal;
     private int tamano;
@@ -152,24 +151,23 @@ public class ListaNodos<T> implements Iterable<T>{
         return new ListaNodosIterator();
     }
     private class ListaNodosIterator implements Iterator<T> {
-        private Nodo<T> nodoActual;
+        Nodo<T> nodoActual;
         public ListaNodosIterator() {
             this.nodoActual = ListaNodos.this.nodoIncial;
         }
-
         @Override
         public boolean hasNext() {
-            return nodoActual != null;
+            return nodoActual!=null;
         }
 
         @Override
         public T next() {
             if (!hasNext()) {
-                throw new NoSuchElementException("Doesnt't exist that element");
+                throw new NoSuchElementException("Doesn't exist more elements");
             }
-            T valorActual = nodoActual.getValor();
+            T valor = nodoActual.getValor();
             nodoActual = nodoActual.getSeguinteNodo();
-            return valorActual;
+            return valor;
         }
     }
 }
