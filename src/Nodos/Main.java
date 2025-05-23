@@ -6,9 +6,14 @@ public class Main {
         nodo.append(300);
         System.out.println(nodo.get(nodo.getTamano()-1));
         ListaNodos<String> cadenas = new ListaNodos<>("Hola","individuo","eres","tu","quien","crees");
+        ListaNodos<String> nueva = new ListaNodos<>();
+        System.out.println(nueva);
         for (String cadena : cadenas) {
-            System.out.println(cadena);
+            if (cadena.length()>4) {
+                nueva.append(cadena);
+            }
         }
+        System.out.println(nueva);
     }
 }
 

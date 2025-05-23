@@ -170,5 +170,16 @@ public class ListaNodos<T> implements Iterable<T> {
             return valor;
         }
     }
+
+    @Override
+    public String toString() {
+        StringBuilder cadena = new StringBuilder("{");
+        for (int i = 0;i<this.tamano;i++) {
+            if (i==this.tamano-1) cadena.append(this.get(i));
+            else cadena.append(this.get(i)).append(",");
+        }
+        cadena.append("}");
+        return cadena.toString();
+    }
 }
 
