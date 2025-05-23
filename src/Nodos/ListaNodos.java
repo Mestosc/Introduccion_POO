@@ -174,9 +174,11 @@ public class ListaNodos<T> implements Iterable<T> {
     @Override
     public String toString() {
         StringBuilder cadena = new StringBuilder("{");
-        for (int i = 0;i<this.tamano;i++) {
-            if (i==this.tamano-1) cadena.append(this.get(i));
-            else cadena.append(this.get(i)).append(",");
+        Iterator<T> it = this.iterator();
+        while (it.hasNext()) {
+            T valor = it.next();
+            if (!it.hasNext()) cadena.append(valor);
+            else cadena.append(valor).append(",");
         }
         cadena.append("}");
         return cadena.toString();
